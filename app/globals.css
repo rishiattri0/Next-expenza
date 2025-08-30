@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --bg: theme(colors.white);
+  --fg: theme(colors.gray.900);
+}
+
+.dark {
+  --bg: theme(colors.black);
+  --fg: theme(colors.gray.100);
+}
+
+body {
+  @apply bg-[var(--bg)] text-[var(--fg)] transition-colors duration-300;
+}
