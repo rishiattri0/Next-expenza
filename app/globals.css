@@ -41,3 +41,12 @@ body {
 body {
   @apply bg-[var(--bg)] text-[var(--fg)] transition-colors duration-300;
 }
+/* Embla base styles – keep it tiny */
+/* app/globals.css  (or any global CSS) */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: 1rem; /* tighter spacing */
+}
