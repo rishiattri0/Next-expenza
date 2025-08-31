@@ -1,8 +1,10 @@
-// AboutPage.tsx
 "use client";
 import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const AboutPage = () => {
   /* ---------- Stats Carousel (Our Impact) ---------- */
@@ -16,10 +18,6 @@ const AboutPage = () => {
     { label: "AI insights delivered", value: "1M+" },
     { label: "Support availability", value: "24/7" },
   ];
-
-  const [statsRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 3500, stopOnInteraction: false }),
-  ]);
 
   /* ---------- Features Carousel ---------- */
   const features = [
@@ -74,10 +72,6 @@ const AboutPage = () => {
       body: "Upload or scan receipts and let AI automatically extract details.",
     },
   ];
-
-  const [featuresRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 4000, stopOnInteraction: false }),
-  ]);
 
   return (
     <main className="min-h-screen font-sans bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 antialiased">
@@ -136,30 +130,40 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-14 overflow-hidden embla" ref={statsRef}>
-            <div className="embla__container">
+          <div className="mt-14">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              loop
+              spaceBetween={20}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
               {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-0.5rem)] md:flex-[0_0_calc(33.333%-0.66rem)]
-                       rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
+                <SwiperSlide key={stat.label}>
+                  <div
+                    className="rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
                        dark:border-neutral-700 p-8 text-center backdrop-blur-sm shadow-md
                        transition hover:shadow-lg hover:border-blue-500/40"
-                >
-                  <p className="text-5xl font-extrabold text-blue-600 dark:text-blue-400 animate-pulse">
-                    {stat.value}
-                  </p>
-                  <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-400">
-                    {stat.label}
-                  </p>
-                </div>
+                  >
+                    <p className="text-5xl font-extrabold text-blue-600 dark:text-blue-400 animate-pulse">
+                      {stat.value}
+                    </p>
+                    <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-400">
+                      {stat.label}
+                    </p>
+                  </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features Carousel */}
       <section className="px-6 py-20 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
@@ -179,28 +183,38 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-14 overflow-hidden embla" ref={featuresRef}>
-            <div className="embla__container">
+          <div className="mt-14">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              loop
+              spaceBetween={20}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
               {features.map((f) => (
-                <div
-                  key={f.title}
-                  className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-0.5rem)] lg:flex-[0_0_calc(33.333%-0.66rem)]
-                       rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
+                <SwiperSlide key={f.title}>
+                  <div
+                    className="rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
                        dark:border-neutral-700 p-6 backdrop-blur-sm shadow-md
                        transition hover:shadow-lg hover:border-blue-500/40"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded border border-blue-500/40 text-2xl dark:border-blue-400/40 shadow-md bg-gradient-to-br from-blue-600 to-sky-500 text-white">
-                    {f.icon}
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded border border-blue-500/40 text-2xl dark:border-blue-400/40 shadow-md bg-gradient-to-br from-blue-600 to-sky-500 text-white">
+                      {f.icon}
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold text-blue-600 dark:text-blue-400">
+                      {f.title}
+                    </h3>
+                    <p className="mt-3 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+                      {f.body}
+                    </p>
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold text-blue-600 dark:text-blue-400">
-                    {f.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    {f.body}
-                  </p>
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { SignInButton } from "@clerk/nextjs";
+import { CardCarousel } from "@/components/ui/card-carousel";
 
 const Guest = () => {
   return (
@@ -117,6 +118,52 @@ const Guest = () => {
           </div>
         </div>
       </section>
+      <CardCarousel
+        items={[
+          {
+            highlight: "AI Insights",
+            title: "Smarter Decisions",
+            description:
+              "Our AI analyzes your spending patterns and gives you personalized recommendations.",
+          },
+          {
+            highlight: "Seamless Sync",
+            title: "Real-Time Tracking",
+            description:
+              "Stay updated with automatic syncing across your bank accounts.",
+          },
+          {
+            highlight: "Smart Categories",
+            title: "Zero Manual Work",
+            description:
+              "Transactions are categorized instantly with near-perfect accuracy.",
+          },
+          {
+            highlight: "Goal Tracking",
+            title: "Stay Motivated",
+            description:
+              "Visualize your financial journey and crush your savings goals.",
+          },
+          {
+            highlight: "Global Reach",
+            title: "Worldwide Support",
+            description:
+              "Track money in multiple currencies and regions effortlessly.",
+          },
+          {
+            highlight: "Alerts",
+            title: "Stay Informed",
+            description:
+              "Get instant notifications for unusual activity or overspending.",
+          },
+          {
+            highlight: "Security",
+            title: "Bank-Grade Protection",
+            description:
+              "Your financial data is encrypted and safeguarded at every step.",
+          },
+        ]}
+      />
 
       {/* Testimonials Section */}
       <section className="py-20 px-6 sm:px-8 bg-neutral-50 dark:bg-neutral-950 border-t border-neutral-200/40 dark:border-neutral-800/40">
