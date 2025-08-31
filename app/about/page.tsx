@@ -84,14 +84,16 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative isolate grid place-items-center px-6 py-28 sm:px-8 sm:py-36">
         <div className="max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-neutral-300 dark:border-neutral-700 px-4 py-1.5 text-sm font-medium">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-neutral-900 dark:bg-neutral-100" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 dark:border-blue-400/30 px-4 py-1.5 text-sm font-medium">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-600 dark:bg-blue-400" />
             AI-powered
           </span>
 
           <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             About{" "}
-            <span className="text-black dark:text-white">Expenza&nbsp;AI</span>
+            <span className="bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-500 bg-clip-text text-transparent">
+              Expenza&nbsp;AI
+            </span>
           </h1>
 
           <p className="mt-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-xl">
@@ -102,7 +104,7 @@ const AboutPage = () => {
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/sign-up"
-              className="rounded border border-black bg-black px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-800 dark:border-white dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+              className="rounded border border-blue-600 bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 dark:border-blue-400 dark:bg-blue-400 dark:text-black dark:hover:bg-blue-300 shadow-lg hover:shadow-blue-500/30"
             >
               Get started
             </Link>
@@ -115,16 +117,17 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      {/* Our Impact Carousel */}
 
+      {/* Our Impact Carousel */}
       <section className="px-6 py-5 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
-            <span className="inline-block rounded-full border border-neutral-300 dark:border-neutral-700 px-4 py-1 text-sm font-medium">
+            <span className="inline-block rounded-full border border-blue-500/30 dark:border-blue-400/30 px-4 py-1 text-sm font-medium">
               Our Impact
             </span>
             <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-              Transforming financial management with AI
+              Transforming financial management with{" "}
+              <span className="text-blue-600 dark:text-blue-400">AI</span>
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-base leading-relaxed text-neutral-600 dark:text-neutral-300">
               We combine finance expertise with advanced AI to deliver
@@ -140,9 +143,12 @@ const AboutPage = () => {
                   key={stat.label}
                   className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-0.5rem)] md:flex-[0_0_calc(33.333%-0.66rem)]
                        rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
-                       dark:border-neutral-700 p-8 text-center backdrop-blur-sm shadow-md"
+                       dark:border-neutral-700 p-8 text-center backdrop-blur-sm shadow-md
+                       transition hover:shadow-lg hover:border-blue-500/40"
                 >
-                  <p className="text-5xl font-extrabold">{stat.value}</p>
+                  <p className="text-5xl font-extrabold text-blue-600 dark:text-blue-400 animate-pulse">
+                    {stat.value}
+                  </p>
                   <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-400">
                     {stat.label}
                   </p>
@@ -153,14 +159,19 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Features */}
       <section className="px-6 py-20 sm:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
-            <span className="inline-block rounded-full border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs font-medium">
+            <span className="inline-block rounded-full border border-blue-500/30 dark:border-blue-400/30 px-3 py-1 text-xs font-medium">
               Features
             </span>
             <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-              Why choose Expensza&nbsp;AI?
+              Why choose{" "}
+              <span className="text-blue-600 dark:text-blue-400">
+                Expenza&nbsp;AI
+              </span>
+              ?
             </h2>
             <p className="mt-3 max-w-xl mx-auto text-base text-neutral-600 dark:text-neutral-300">
               We built the features we wished existed—clean, smart, and
@@ -175,12 +186,15 @@ const AboutPage = () => {
                   key={f.title}
                   className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-0.5rem)] lg:flex-[0_0_calc(33.333%-0.66rem)]
                        rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70
-                       dark:border-neutral-700 p-6 backdrop-blur-sm shadow-md"
+                       dark:border-neutral-700 p-6 backdrop-blur-sm shadow-md
+                       transition hover:shadow-lg hover:border-blue-500/40"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded border border-neutral-300 text-2xl dark:border-neutral-700">
+                  <div className="flex h-14 w-14 items-center justify-center rounded border border-blue-500/40 text-2xl dark:border-blue-400/40 shadow-md bg-gradient-to-br from-blue-600 to-sky-500 text-white">
                     {f.icon}
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold">{f.title}</h3>
+                  <h3 className="mt-5 text-xl font-semibold text-blue-600 dark:text-blue-400">
+                    {f.title}
+                  </h3>
                   <p className="mt-3 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
                     {f.body}
                   </p>

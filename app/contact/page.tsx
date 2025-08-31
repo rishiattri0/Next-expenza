@@ -13,7 +13,9 @@ const ContactPage = () => (
 
         <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           Contact{" "}
-          <span className="text-black dark:text-white">Expenza&nbsp;AI</span>
+          <span className="bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-500 bg-clip-text text-transparent">
+            Expenza&nbsp;AI
+          </span>
         </h1>
 
         <p className="mt-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-xl">
@@ -56,8 +58,8 @@ const ContactPage = () => (
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Email */}
-          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.6)]">
-            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-emerald-500 transition">
+          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl transition-colors duration-500 group-hover:bg-blue-500">
               ✉️
             </div>
             <h3 className="font-bold text-lg mb-2">Email Support</h3>
@@ -73,8 +75,8 @@ const ContactPage = () => (
           </div>
 
           {/* Phone */}
-          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.6)]">
-            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-emerald-500 transition">
+          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl transition-colors duration-500 group-hover:bg-blue-500">
               📞
             </div>
             <h3 className="font-bold text-lg mb-2">Phone Support</h3>
@@ -90,8 +92,8 @@ const ContactPage = () => (
           </div>
 
           {/* Office */}
-          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.6)]">
-            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-emerald-500 transition">
+          <div className="group relative rounded-xl border border-neutral-300 bg-white/80 dark:bg-black/70 dark:border-neutral-700 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+            <div className="w-12 h-12 bg-neutral-900 text-white rounded-lg flex items-center justify-center mx-auto mb-4 text-xl transition-colors duration-500 group-hover:bg-blue-500">
               📍
             </div>
             <h3 className="font-bold text-lg mb-2">Office Location</h3>
@@ -104,8 +106,6 @@ const ContactPage = () => (
         </div>
       </div>
     </section>
-
-    {/* Hours & FAQ */}
   </main>
 );
 
