@@ -42,11 +42,11 @@ export const CardCarousel: React.FC<CarouselProps> = ({
           delay: autoplayDelay,
           disableOnInteraction: false,
         }}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={"auto"}
+        effect="coverflow"
+        grabCursor
+        centeredSlides
+        loop
+        slidesPerView="auto"
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -60,17 +60,30 @@ export const CardCarousel: React.FC<CarouselProps> = ({
       >
         {items.map((item, index) => (
           <SwiperSlide key={index} className="max-w-xs">
-            <div className="relative group rounded-2xl p-6 bg-neutral-900 text-white shadow-lg overflow-hidden border border-neutral-700 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/40">
+            <div
+              className="relative group rounded-2xl p-6 
+                            bg-white dark:bg-neutral-900 
+                            text-neutral-900 dark:text-white 
+                            shadow-lg overflow-hidden 
+                            border border-neutral-200 dark:border-neutral-700 
+                            transition-all duration-300 
+                            hover:scale-105 hover:shadow-blue-500/40"
+            >
               {/* Glow Layer */}
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500 -z-0" />
+              <span
+                className="absolute inset-0 
+                               bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 
+                               opacity-0 group-hover:opacity-100 
+                               blur-2xl transition duration-500 -z-0"
+              />
 
               {/* Card Content */}
               <div className="relative z-10">
-                <p className="text-xs uppercase tracking-wide text-blue-400 mb-2">
+                <p className="text-xs uppercase tracking-wide text-blue-500 dark:text-blue-400 mb-2">
                   {item.highlight}
                 </p>
                 <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-neutral-300">
+                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
                   {item.description}
                 </p>
               </div>
