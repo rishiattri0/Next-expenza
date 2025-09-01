@@ -2,6 +2,7 @@
 
 import { SignInButton } from "@clerk/nextjs";
 import { CardCarousel } from "@/components/ui/card-carousel";
+import Link from "next/link";
 
 const Guest = () => {
   return (
@@ -32,9 +33,11 @@ const Guest = () => {
                 Get Started Free →
               </button>
             </SignInButton>
-            <button className="border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
-              Learn More
-            </button>
+            <Link href="/about">
+              <button className="border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
+                Learn More
+              </button>
+            </Link>
           </div>
 
           {/* Features */}

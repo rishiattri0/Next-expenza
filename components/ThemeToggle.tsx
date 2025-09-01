@@ -11,43 +11,41 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return (
-      <div className="relative w-14 h-8 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md border border-gray-300 dark:border-gray-700">
-        <div className="absolute top-0.5 left-0.5 w-7 h-7 bg-white dark:bg-gray-900 rounded-full shadow flex items-center justify-center">
-          <span className="text-sm">🌙</span>
-        </div>
-      </div>
+      <div className="w-12 h-6 rounded-full bg-slate-800 border border-slate-700"></div>
     );
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-14 h-8 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-full shadow-md border border-gray-300 dark:border-gray-700 transition-all duration-300 group hover:shadow-[0_0_8px_rgba(168,85,247,0.6)]"
+      className={`
+        relative w-12 h-6  rounded-full border transition-all duration-300 
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+        ${
+          theme === "dark"
+            ? "bg-slate-950 border-slate-800 shadow-sm shadow-slate-800/40"
+            : "bg-slate-100 border-slate-300 hover:bg-slate-200"
+        }
+      `}
       title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {/* Toggle Knob */}
       <div
-        className={`absolute top-0.5 w-7 h-7 rounded-full shadow-md flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 ${
-          theme === "light"
-            ? "left-0.5 bg-white text-yellow-500"
-            : "left-6 bg-gray-900 text-purple-400"
-        }`}
-      >
-        {theme === "light" ? "☀️" : "🌙"}
-      </div>
+        className={`
+          absolute top-0.5 w-5 h-5 rounded-full transition-all duration-300 transform
+          ${
+            theme === "light"
+              ? "left-0.5 bg-gradient-to-br from-amber-400 to-amber-500 shadow-md"
+              : "left-6 bg-gradient-to-br from-slate-500 to-slate-600 shadow-md shadow-slate-700/30"
+          }
+        `}
+      />
 
-      {/* Background Icons */}
-      <div className="absolute inset-0 flex items-center justify-between px-1.5 pointer-events-none text-xs text-gray-500 dark:text-gray-400">
-        <span className={`${theme === "light" ? "opacity-0" : "opacity-40"}`}>
-          ☀️
-        </span>
-        <span className={`${theme === "light" ? "opacity-40" : "opacity-0"}`}>
-          🌙
-        </span>
-      </div>
+      {/* Optional subtle icons (visually hidden but accessible) */}
+      <span className="sr-only">Toggle theme</span>
     </button>
   );
 }

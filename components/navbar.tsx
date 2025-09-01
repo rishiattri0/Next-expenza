@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,7 +68,7 @@ export default function Navbar() {
                 Contact
               </Link>
             </div>
-            <ThemeToggle />
+            <AnimatedThemeToggler />
 
             {/* Authentication - Desktop */}
             <div className="hidden sm:block">
